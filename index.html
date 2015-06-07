@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <title>Angular Timezone</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-app="pstJSTConvertor">
+  <div class="wrapper" ng-controller="PSTJSTController">
+    <h4>PST</h4>
+    <div class="field">
+      <input type="text" ng-model="pstStart" ng-change="changePST()">
+      ~
+      <input type="text" ng-model="pstFinish" ng-change="changePST()">
+    </div>
+    <div class="field">
+      <input class="range-input" type="text" ng-model="pstRange">
+    </div>
+    <h4>JST</h4>
+    <div class="field">
+      <input type="text" ng-model="jstStart" ng-change="changeJST()">
+      ~
+      <input type="text" ng-model="jstFinish" ng-change="changeJST()">
+    </div>
+  </div>
+
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+.wrapper {
+  width: 400px;
+  padding: 10px 10px 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px #ccc;
+  margin: 50px auto;
+}
+
+h4 {
+  padding: 0;
+  margin: 10px;
+}
+
+.field {
+  margin: 5px;
+  text-align: center;
+}
+
+input {
+  line-height: 25px;
+  width: 40%;
+  font-size: 15px;
+}
+
+.range-input {
+  width: 86%;
+}
