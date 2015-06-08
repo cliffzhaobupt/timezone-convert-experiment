@@ -3,7 +3,7 @@
 angular.module('pstJSTConvertor', [])
 .controller('PSTJSTController', ['$scope', '$filter', function($scope, $filter) {
   var inputTimeFormat = 'yyyy-MM-dd HH:mm:ss',
-    timeFormatWithAbbreviation = 'MMM. dd (hh:mm)';
+    timeFormatWithAbbreviation = 'MMM. dd (HH:mm)';
   var dateFilter = $filter('date');
 
   function toParsableTimeStr(timeStr) {
