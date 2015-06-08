@@ -6,36 +6,14 @@ angular.module('pstJSTConvertor', [])
     timeFormatWithAbbreviation = 'MMM. dd (HH:mm)';
   var dateFilter = $filter('date');
 
-  function toParsableTimeStr(timeStr) {
+  function parseTime(timeStr) {
     if (! timeStr) return '';
-    return timeStr.replace(' ', 'T');
+    return Date.parse(timeStr.replace(' ', 'T'));
   }
 
-  $scope.changePST = function() {
-    var pstStart = Date.parse(toParsableTimeStr($scope.pstStart));
-    var pstFinish = Date.parse(toParsableTimeStr($scope.pstFinish));
-
-    if (! isNaN(pstStart)) {
-      $scope.jstStart = dateFilter(pstStart, inputTimeFormat, '+1700');
-    } else {
-      $scope.jstStart = '';
-    }
-    if (! isNaN(pstFinish)) {
-      $scope.jstFinish = dateFilter(pstFinish, inputTimeFormat, '+1700');
-    } else {
-      $scope.jstFinish = '';
-    }
-          
-    $scope.pstRange = [
-      isNaN(pstStart) ? '' : dateFilter(pstStart, timeFormatWithAbbreviation),
-      ' - ',
-      isNaN(pstFinish) ? '' : dateFilter(pstFinish, timeFormatWithAbbreviation)
-    ].join('');
-  };
-
   $scope.changeJST = function() {
-    var jstStart = Date.parse(toParsableTimeStr($scope.jstStart));
-    var jstFinish = Date.parse(toParsableTimeStr($scope.jstFinish));
+    var jstStart = parseTime($scope.jstStart);
+    var jstFinish = parseTime($scope.jstFinish);
 
     if (! isNaN(jstStart)) {
       $scope.pstStart = dateFilter(jstStart, inputTimeFormat, '-1700');
